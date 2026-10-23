@@ -1,0 +1,24 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/privacy-bulk-image-generator", "destination": "/gemnix/privacy", "permanent": true },
+    { "source": "/terms-bulk-image-generator", "destination": "/gemnix/terms", "permanent": true },
+    { "source": "/privacy", "destination": "/gemnix/privacy", "permanent": false },
+    { "source": "/terms", "destination": "/gemnix/terms", "permanent": false },
+    { "source": "/support", "destination": "/gemnix/support", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
